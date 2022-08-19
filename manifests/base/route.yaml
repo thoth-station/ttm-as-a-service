@@ -1,0 +1,12 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: ttm-as-a-service-webhook-receiver
+spec:
+  port:
+    targetPort: 8080-tcp
+  to:
+    kind: Service
+    name: ttm-as-a-service
+    weight: 100

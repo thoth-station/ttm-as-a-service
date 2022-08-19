@@ -1,7 +1,11 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 approvers:
-  - Gkrumbach07
   - goern
-reviewers:
+  - harshad16
+  - kpostoffice
   - Gkrumbach07
+reviewers:
+  - kpostoffice
+  - Gkrumbach07
+  - harshad16
