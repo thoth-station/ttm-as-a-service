@@ -1,12 +1,22 @@
-# template-project
+# Time to Merge (TTM) as a Service
 
-This is a Template for any Python based project, it contains what Project Thoth and the AI CoE need:
+TTM is a model that classifies a GitHub PR into 1 of 10 time categories ranging from under a minute to over 4 days.
 
-1. GitHub defaults and Templates for issues.
-2. Configuration for Coala and Black (code formating) are done using [`prow`](https://github.com/kubernetes/test-infra/tree/master/prow) with `pre-commit` and `mypy`.
-3. Zuul is no longer suppported. Instead [AICOE-CI](https://github.com/AICoE/aicoe-ci) is used for basic configuration.
-4. We have a public service configuration now accessible for everyone.
-5. If you are writing a Python module, [Kebechet](https://github.com/marketplace/khebhut) could manage the releases of your packages for you.
-6. If credentials are provided, Python module releases could be published to [`PyPI`](https://pypi.org/) by [Kebechet](https://github.com/marketplace/khebhut).
+- Model training: https://github.com/aicoe-aiops/ocp-ci-analysis/tree/master/notebooks/time-to-merge-prediction/thoth-station
+- Model usage: https://github.com/aicoe-aiops/ocp-ci-analysis/tree/master/models/thoth-support-github-ttm
 
-Dependencies should be managed using `pipenv` (`Pipfile`, and the `Pipfile.lock` could be created by `thamos advise`), `pip3` and a `requirements.txt` files could be used.
+This repo takes the TTM model and turns it into a service. This repo hosts a bot that uses GitHub webhooks to respond to pull requests.
+Currently, any user that installs the bot is assigned to use the Thoth trained bot. In the future, there will be a flow that 
+auto-trains on an org or set of repos.
+
+## Output classes
+- 0-1 mins 
+- 1-2 mins
+- 2-5 mins
+- 5-10 mins
+- 10-30 mins
+- < 2 hours
+- 2-8 hours
+- 8-17 hours
+- < 4 days
+- \> 4 days
