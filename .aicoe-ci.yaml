@@ -5,11 +5,11 @@ build:
   base-image: quay.io/thoth-station/s2i-thoth-ubi8-py38:v0.29.0
   build-stratergy: "Source"
   registry: "quay.io"
-  registry-org: "gkrumbach07"
-  registry-project: "ttm-as-a-service-webhook-receiver"
-  registry-secret: "gkrumbach07-pusher-secret"
+  registry-org: "thoth-station"
+  registry-project: "ttm-as-a-service"
+  registry-secret: "thoth-station-thoth-pusher-secret"
 deploy:
-  project-org: "gkrumbach07"
+  project-org: "thoth-station"
   project-name: "ttm-as-a-service"
-  image-name: "ttm-as-a-service-webhook-receiver"
+  image-name: "ttm-as-a-service"
 #  overlay-contextpath: "sefkhet-abwy/overlays/ocp/imagestreamtag.yaml"

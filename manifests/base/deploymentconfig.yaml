@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: ttm-as-a-service-webhook-receiver
-          image: quay.io/gkrumbach07/ttm-as-a-service:latest
+          image: quay.io/thoth-station/ttm-as-a-service:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

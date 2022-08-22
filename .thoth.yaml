@@ -18,8 +18,8 @@ managers:
   - name: version
     configuration:
       maintainers:
-        - harshad16
         - Gkrumbach07
+        - goern
       assignees:
         - sesheta
       labels: [bot]

@@ -3,22 +3,14 @@ import os
 from flask import Flask
 from flask_githubapp import GitHubApp
 
-# import openshift_utils
 import ttm_github_pr
 
-# from dotenv import load_dotenv
-
-# load_dotenv()
-
-# from app import openshift_utils
 app = Flask(__name__)
 
 app.config['GITHUBAPP_ID'] = int(os.environ['GITHUBAPP_ID'])
 app.config['GITHUBAPP_SECRET'] = os.environ['GITHUBAPP_SECRET']
 app.config['GITHUBAPP_KEY'] = os.environ['GITHUBAPP_KEY']
 
-# with open(os.environ['GITHUBAPP_KEY_PATH'], 'rb') as key_file:
-#     app.config['GITHUBAPP_KEY'] = key_file.read()
 
 github_app = GitHubApp(app)
 
@@ -46,16 +38,10 @@ def process_pr_webhook():
 
 @github_app.on("installation.created")
 def install_app():
-    # openshift_utils.create_github_token_secret(
-    #     installation_id=github_app.id,
-    #     token=github_app.installation_token,
-    #     gh_namespace=github_app.payload["installation"]["account"]["login"],
-    # )
     print("installed")
 
 
 @github_app.on("installation.deleted")
 def uninstall_app():
-    # openshift_utils.delete_github_token_secret(installation_id=github_app.id)
     print("removed")
 
