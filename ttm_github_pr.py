@@ -1,4 +1,3 @@
-import os
 import json
 import requests
 import pandas as pd
@@ -72,7 +71,9 @@ def get_approve_time(reviews) -> Optional[int]:
     return min(approvals) if approvals else None
 
 
-def extract_pull_request_reviews(pull_request: GithubPullRequest,):
+def extract_pull_request_reviews(
+    pull_request: GithubPullRequest,
+):
     """Extract required features for each review from PR.
     Arguments:
         pull_request {PullRequest} -- Pull Request from which the reviews will be extracted
