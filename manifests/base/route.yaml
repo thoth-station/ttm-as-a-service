@@ -4,8 +4,6 @@ kind: Route
 metadata:
   name: ttm-as-a-service
 spec:
-  port:
-    targetPort: 8080-tcp
   to:
     kind: Service
     name: ttm-as-a-service
