@@ -23,11 +23,13 @@ spec:
           image: ttm-as-a-service:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 5000
               protocol: TCP
           env:
+            - name: APP_FILE
+              value: wsgi.py
             - name: PORT
-              value: "8080"
+              value: "5000"
             - name: GITHUBAPP_ID
               valueFrom:
                 secretKeyRef:

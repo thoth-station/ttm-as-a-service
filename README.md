@@ -20,3 +20,18 @@ auto-trains on an org or set of repos.
 - 8-17 hours
 - < 4 days
 - \> 4 days
+
+## Local Testing
+
+The application is developed using flask. Use the following step to setup local env for Testing.
+1. Install and Set python env.
+ `pipenv install`
+ `pipenv shell`
+2. Run the app.
+ `python wsgi.py`
+
+## Deployment
+
+This project is managed with kustomize.
+Use the following command to deploy on OpenShift cluster.
+`kustomize build manifests/overlays/test | oc apply -f -`
