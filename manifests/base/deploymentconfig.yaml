@@ -1,26 +1,26 @@
 apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
-  name: ttm-as-a-service-webhook-receiver
+  name: ttm-as-a-service
 spec:
   replicas: 1
   test: false
   selector:
-    deploymentconfig: ttm-as-a-service-webhook-receiver
-    app.kubernetes.io/name: ttm-as-a-service
-    app.kubernetes.io/component: webhook-receiver
+    deploymentconfig: ttm-as-a-service
+    app.kubernetes.io/name: thoth
+    app.kubernetes.io/component: ttm-as-a-service
     app.kubernetes.io/managed-by: aicoe-thoth-devops
   template:
     metadata:
       labels:
-        deploymentconfig: ttm-as-a-service-webhook-receiver
-        app.kubernetes.io/name: ttm-as-a-service
-        app.kubernetes.io/component: webhook-receiver
+        deploymentconfig: ttm-as-a-service
+        app.kubernetes.io/name: thoth
+        app.kubernetes.io/component: ttm-as-a-service
         app.kubernetes.io/managed-by: aicoe-thoth-devops
     spec:
       containers:
-        - name: ttm-as-a-service-webhook-receiver
-          image: quay.io/thoth-station/ttm-as-a-service:latest
+        - name: ttm-as-a-service
+          image: ttm-as-a-service:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
