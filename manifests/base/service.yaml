@@ -10,4 +10,4 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    deploymentconfig: ttm-as-a-service-webhook-receiver
+    deploymentconfig: ttm-as-a-service
