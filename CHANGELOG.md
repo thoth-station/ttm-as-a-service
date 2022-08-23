@@ -1,4 +1,7 @@
 
+## Release 0.1.2 (2022-08-23T22:16:07)
+* 9c3581d :turtle: Adjusted deployment as per flask app requirements (#15)
+
 ## Release 0.1.1 (2022-08-23T16:28:00)
 * 321304d added overlays (#11)
 
