@@ -1,4 +1,7 @@
 
+## Release 0.1.3 (2022-08-24T17:09:40)
+* c82f901 added config (#20)
+
 ## Release 0.1.2 (2022-08-23T22:16:07)
 * 9c3581d :turtle: Adjusted deployment as per flask app requirements (#15)
 
