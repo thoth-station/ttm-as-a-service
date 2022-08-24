@@ -28,6 +28,8 @@ spec:
           env:
             - name: APP_FILE
               value: wsgi.py
+            - name: APP_CONFIG
+              value: "gunicorn.conf.py"
             - name: PORT
               value: "5000"
             - name: GITHUBAPP_ID
