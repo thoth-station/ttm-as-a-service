@@ -4,12 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask-githubapp = "*"
 "github3.py" = "*"
 kubernetes = "*"
 requests = "*"
 srcopsmetrics = "*"
-gunicorn = "*"
+gidgethub = "*"
+aiohttp = "*"
 
 [dev-packages]
 
