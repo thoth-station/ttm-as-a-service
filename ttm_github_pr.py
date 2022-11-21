@@ -1,9 +1,12 @@
 import json
+
 import requests
 import pandas as pd
 from github import Github
 from github.PullRequest import PullRequest as GithubPullRequest
 from typing import Dict, List, Optional
+import pem
+import glob
 
 _NORMALIZE_VAL = {
     "Class_0": "0-3 hrs",
@@ -178,3 +181,11 @@ def get_ttm(model_url, repo_id, pr_id, gh_token):
         if res["data"].get("names"):
             return _NORMALIZE_VAL.get(res["data"].get("names")[index_min])
     return "Unknown"
+
+
+def load_private_pem():
+    filepath = glob.glob("*.pem")
+    for file in filepath:
+        with open(file, "rb") as f:
+            certs = pem.parse(f.read())
+    return certs[0].as_text()
