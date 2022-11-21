@@ -10,6 +10,7 @@ requests = "*"
 srcopsmetrics = "*"
 gidgethub = "*"
 aiohttp = "*"
+pem = "*"
 
 [dev-packages]
 
