@@ -37,7 +37,7 @@ Use the following command to deploy on OpenShift cluster.
 `kustomize build manifests/overlays/test | oc apply -f -`
 
 ### Latest Updates
-TTM project is being archived. Latest information on TTM related projects can be found over here:  https://github.com/redhat-et/time-to-merge-tool
+TTM Github App project will not be actively pursued and is being archived. User can use this project going forward if they like to or other option like TTM GitHub action is being implemented and available with the latest information on TTM-related projects can be found over here:  https://github.com/redhat-et/time-to-merge-tool
 
 If a user wants to self host the TTM tooling instead of have it run through GitHub servers, follow the steps below:
 1. Train and host model (detailed steps can be found [here](https://github.com/oindrillac/ocp-ci-analysis/tree/thoth-deployment/notebooks/time-to-merge-prediction))
