@@ -13,7 +13,6 @@ import ttm_github_pr
 
 GITHUBAPP_ID = os.environ["GITHUBAPP_ID"]
 GITHUBAPP_SECRET = os.environ["GITHUBAPP_SECRET"]
-GITHUBAPP_KEY = os.environ["GITHUBAPP_KEY"]
 
 router = routing.Router()
 cache = cachetools.LRUCache(maxsize=500)
@@ -39,11 +38,12 @@ async def webhook(request):
 async def opened_pr(event, gh, *arg, **kwargs):
     model_url = "http://thoth-github-ttm-ds-ml-workflows-ws.apps.smaug.na.operate-first.cloud/predict"
     pull_request = event.data["pull_request"]
+    githubapp_key = ttm_github_pr.load_private_pem()
     installation_access_token = await get_installation_access_token(
         gh,
         installation_id=event.data["installation"]["id"],
         app_id=GITHUBAPP_ID,
-        private_key=GITHUBAPP_KEY,
+        private_key=githubapp_key,
     )
     prediction = ttm_github_pr.get_ttm(
         model_url,
